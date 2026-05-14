@@ -1,0 +1,64 @@
+/* app/globals.css */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold: #F5C842;
+  --gold-dim: #B8952E;
+  --green: #2DD4BF;
+  --green-dim: #0F766E;
+  --red: #F87171;
+  --red-dim: #991B1B;
+  --bg: #080B12;
+  --panel: #0E1420;
+  --panel2: #121826;
+  --border: #1C2538;
+  --border2: #242E42;
+  --text: #CBD5E1;
+  --dim: #4B5E7A;
+  --dim2: #64748B;
+  --purple: #818CF8;
+  --orange: #FB923C;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-display: 'Syne', sans-serif;
+}
+
+html, body { height: 100%; background: var(--bg); color: var(--text); }
+
+body {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* Recharts overrides */
+.recharts-tooltip-wrapper { z-index: 100 !important; }
+.recharts-default-tooltip { background: var(--panel2) !important; border: 1px solid var(--border2) !important; border-radius: 8px !important; }
+
+/* Animations */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.fade-in { animation: fadeIn 0.4s ease forwards; }
+
+.skeleton {
+  background: linear-gradient(90deg, var(--panel) 25%, var(--panel2) 50%, var(--panel) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
